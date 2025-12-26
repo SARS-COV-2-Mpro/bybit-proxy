@@ -1,0 +1,20 @@
+[build]
+  functions = "netlify/functions"
+
+[[redirects]]
+  from = "/mainnet/*"
+  to = "/.netlify/functions/proxy"
+  status = 200
+
+[[redirects]]
+  from = "/testnet/*"
+  to = "/.netlify/functions/proxy"
+  status = 200
+
+[[redirects]]
+  from = "/health"
+  to = "/.netlify/functions/proxy"
+  status = 200
+
+[functions]
+  node_bundler = "esbuild"
